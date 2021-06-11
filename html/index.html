@@ -3,12 +3,12 @@
 
 <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="./viewModel.js" type="module"></script>
+        <script src="../js/viewModel.js" type="module"></script>
         <meta charset="UTF-8" />
         <title>Hello Knockout!</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
 
 
 </head>
@@ -23,7 +23,7 @@
    <section id="row1">
    <h1 class="sectionTitle">Continue Watching for Username</h1>
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
   <a href="#">Movie 1</a>
   
 </div>
@@ -33,7 +33,7 @@
          <li class="image">
             <a href="#">
                <img id="box1" src="http://placehold.it/280x150" width="280" height="150" />
-               <span class="text-content"><span>Title Here...<br><br><i class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down" onclick="openNav()" aria-hidden="true"></i></span></span>
+               <span class="text-content"><span>Title Here...<br><br><i class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down" data-bind="click: openNav" aria-hidden="true"></i></span></span>
             </a>
          </li>
         
@@ -113,14 +113,8 @@
       </ul>
    </div>
 </div>
-  
-  
-
-    <script  src="js/index.js"></script>
-
-
-
 
 </body>
+
 </html>
 
