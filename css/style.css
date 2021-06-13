@@ -9,9 +9,6 @@ body {
   margin: 0;
 }
 
-#exampleText1 {
-  display: hidden;
-}
 
 .container {
   width: 1005px;
@@ -32,13 +29,12 @@ h1 {
 }
 
 .image:hover {
-  -webkit-transform: scale(1.35);
   transform: scale(1.35);
   opacity: 0.9;
 }
 
 .image {
-  -webkit-transition: all 0.7s ease;
+
   transition: all 0.7s ease;
   padding: 15px;
   margin: auto;
@@ -58,9 +54,6 @@ span.text-content {
   top: 15px;
   width: 280px;
   opacity: 0;
-  -webkit-transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
   transition: opacity 500ms;
 }
 
@@ -89,7 +82,6 @@ ul.img-list li {
 
 ul.img-list li:hover span.text-content {
   opacity: 1;
-  -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
 a:link {
@@ -196,9 +188,7 @@ details[open] summary ~ * {
     opacity: 1;
   }
 }
-details summary::-webkit-details-marker {
-  display: none;
-}
+
 
 details summary {
   width: 100%;

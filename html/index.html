@@ -25,11 +25,14 @@
    <div class="container">
 
       <section id="row1">
-         <h1 class="sectionTitle">Neue Filme</h1>
-
-         <div id="mySidenav" class="sidenav">
+                <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
-            <a id="myTitle" href="#">TestMovie</a>
+            <a id="myTitle"></a>
+            <details>
+               <summary>Description</summary>
+               <p id="myDescription">
+               </p>
+            </details>
             <details>
                <summary>Publishing Year</summary>
                <p id="myYear">
@@ -46,7 +49,8 @@
                </p>
              </details>
          </div>
-
+  
+         <h1 class="sectionTitle">Neue Filme</h1>
          <div class="examples">
             <ul class="img-list" data-bind="foreach: newMovies">
                <li class="image">
