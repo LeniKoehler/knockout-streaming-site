@@ -49,7 +49,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
 
@@ -58,7 +58,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
 
@@ -67,7 +67,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
             </ul>
@@ -85,7 +85,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
 
@@ -94,7 +94,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
 
@@ -103,7 +103,7 @@
                      <img src="http://placehold.it/280x150" width="280" height="150" />
                      <span class="text-content"><span>Title Here...<br><br><i
                               class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              aria-hidden="true"></i></span></span>
+                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
                   </a>
                </li>
 
@@ -112,34 +112,37 @@
       </section>
       <h1 class="sectionTitle">Nochmal ansehen</h1>
       <div class="examples">
-         <ul class="img-list">
+         <ul class="img-list" data-bind="foreach: movies">
             <li class="image">
                <a href="#">
-                  <img src="http://placehold.it/280x150" width="280" height="150" />
-                  <span class="text-content"><i class="fa fa-chevron-up" aria-hidden="true"></i><br><br><i
-                        class="fa fa-4x  fa-play-circle-o"></i><br><br>Title Here...</span></span>
+                  <img src="" width="280" height="150" />
+                  <span data-bind="text: title" class="text-content">
+                     <span>
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        <i data-bind="click: openNav" class="fa fa-4x  fa-play-circle-o"></i>
+                     </span>                      
+                  </span>
                </a>
             </li>
-
-            <li class="image">
-               <a href="#">
-                  <img src="http://placehold.it/280x150" width="280" height="150" />
-                  <span class="text-content"><i class="fa fa-chevron-up" aria-hidden="true"></i><br><br><i
-                        class="fa fa-4x  fa-play-circle-o"></i><br><br>Title Here...</span></span>
-               </a>
-            </li>
-
-            <li class="image">
-               <a href="#">
-                  <img src="http://placehold.it/280x150" width="280" height="150" />
-                  <span class="text-content"><i class="fa fa-chevron-up" aria-hidden="true"></i><br><br><i
-                        class="fa fa-4x  fa-play-circle-o"></i><br><br>Title Here...</span></span>
-               </a>
-            </li>
-
          </ul>
       </div>
    </div>
+
+   <table>
+      <thead><tr>
+          <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
+      </tr></thead>
+      <!-- Todo: Generate table body -->
+      <tbody data-bind="foreach: movies">
+          <tr>
+              <td data-bind="text: title"></td>
+              <td data-bind="text: regisseur"></td>
+              <td><a href="#" data-bind="click: $root.removeMovie">Remove</a></td>
+          </tr>    
+      </tbody>
+  </table>
+
+  <button data-bind="click: addMovie">Reserve another movie</button>
 
 </body>
 
