@@ -26,52 +26,42 @@
 
       <section id="row1">
          <h1 class="sectionTitle">Neue Filme</h1>
+
          <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
-            <a href="#">Movie 1</a>
-
+            <a id="myTitle" href="#">TestMovie</a>
+            <details>
+               <summary>Publishing Year</summary>
+               <p id="myYear">
+               </p>
+            </details>
+            <details>
+               <summary>Regisseur</summary>
+               <p id="myRegisseur">
+               </p>
+            </details>
+            <details>
+               <summary>Actors</summary>
+               <p id="myActors">
+               </p>
+             </details>
          </div>
 
          <div class="examples">
-            <ul class="img-list">
+            <ul class="img-list" data-bind="foreach: newMovies">
                <li class="image">
                   <a href="#">
-                     <img id="box1" src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
+                     <img width="280" height="150" data-bind="attr:{src: imgPath}" />
+                        <span data-bind="text: title" class="text-content"></span> 
+                        <span class="text-content"> 
+                           <br></br>
+                           <i class="fa fa-4x  fa-play-circle-o"></i>
+                           <br></br>
+                           <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </span>
                   </a>
                </li>
             </ul>
-
          </div>
 
       </section>
@@ -79,64 +69,53 @@
       <section id="row2">
          <h1 class="sectionTitle">Derzeit beliebt</h1>
          <div class="examples">
-            <ul class="img-list">
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-               <li class="image">
-                  <a href="#">
-                     <img src="http://placehold.it/280x150" width="280" height="150" />
-                     <span class="text-content"><span>Title Here...<br><br><i
-                              class="fa fa-4x  fa-play-circle-o"></i><br><br><i class="fa fa-chevron-down"
-                              data-bind="click: openNav" aria-hidden="true"></i></span></span>
-                  </a>
-               </li>
-
-            </ul>
+         <ul class="img-list" data-bind="foreach: popularMovies">
+            <li class="image">
+               <a href="#">
+                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
+                     <span data-bind="text: title" class="text-content"></span> 
+                     <span class="text-content"> 
+                        <br></br>
+                        <i class="fa fa-4x  fa-play-circle-o"></i>
+                        <br></br>
+                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
+                     </span>
+             
+               </a>
+            </li>
          </div>
       </section>
       <h1 class="sectionTitle">Nochmal ansehen</h1>
       <div class="examples">
-         <ul class="img-list" data-bind="foreach: movies">
+         <ul class="img-list" data-bind="foreach: rewatchMovies">
             <li class="image">
                <a href="#">
-                  <img src="" width="280" height="150" />
-                  <span data-bind="text: title" class="text-content">
-                     <span>
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                        <i data-bind="click: openNav" class="fa fa-4x  fa-play-circle-o"></i>
-                     </span>                      
-                  </span>
+                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
+                     <span data-bind="text: title" class="text-content"></span> 
+                     <span class="text-content"> 
+                        <br></br>
+                        <i class="fa fa-4x  fa-play-circle-o"></i>
+                        <br></br>
+                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
+                     </span>
+             
                </a>
             </li>
+         
          </ul>
       </div>
    </div>
 
-   <table>
+   <table style="color: white">
       <thead><tr>
-          <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
+          <th>Film</th><th>Regisseur</th><th>Image Path</th><th></th>
       </tr></thead>
       <!-- Todo: Generate table body -->
-      <tbody data-bind="foreach: movies">
+      <tbody data-bind="foreach: rewatchMovies">
           <tr>
               <td data-bind="text: title"></td>
               <td data-bind="text: regisseur"></td>
+              <td><input data-bind="value: imgPath"/></td>
               <td><a href="#" data-bind="click: $root.removeMovie">Remove</a></td>
           </tr>    
       </tbody>
