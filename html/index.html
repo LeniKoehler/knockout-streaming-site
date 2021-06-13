@@ -105,24 +105,6 @@
          </ul>
       </div>
    </div>
-
-   <table style="color: white">
-      <thead><tr>
-          <th>Film</th><th>Regisseur</th><th>Image Path</th><th></th>
-      </tr></thead>
-      <!-- Todo: Generate table body -->
-      <tbody data-bind="foreach: rewatchMovies">
-          <tr>
-              <td data-bind="text: title"></td>
-              <td data-bind="text: regisseur"></td>
-              <td><input data-bind="value: imgPath"/></td>
-              <td><a href="#" data-bind="click: $root.removeMovie">Remove</a></td>
-          </tr>    
-      </tbody>
-  </table>
-
-  <button data-bind="click: addMovie">Reserve another movie</button>
-
 </body>
 
 </html>
