@@ -2,113 +2,93 @@
 <html lang="en">
 
 <head>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
-      integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="../js/viewModel.js" type="module"></script>
-   <meta charset="UTF-8" />
-   <title>Hello Knockout!</title>
-
+   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Netflix</title>
    <link rel="stylesheet" href="../css/style.css">
-
-
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
-   <header>
-      <p>NETFLIX</p>
+   <header class="header">
+      <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="Netflix" class="headerLogo">
    </header>
-   <div class="container">
-
-      <section id="row1">
-                <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
-            <a id="myTitle"></a>
-            <details>
-               <summary>Description</summary>
-               <p id="myDescription">
-               </p>
-            </details>
-            <details>
-               <summary>Publishing Year</summary>
-               <p id="myYear">
-               </p>
-            </details>
-            <details>
-               <summary>Regisseur</summary>
-               <p id="myRegisseur">
-               </p>
-            </details>
-            <details>
-               <summary>Actors</summary>
-               <p id="myActors">
-               </p>
-             </details>
-         </div>
-  
-         <h1 class="sectionTitle">Neue Filme</h1>
-         <div class="examples">
-            <ul class="img-list" data-bind="foreach: newMovies">
-               <li class="image">
-                  <a href="#">
-                     <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                        <span data-bind="text: title" class="text-content"></span> 
-                        <span class="text-content"> 
-                           <br></br>
-                           <i class="fa fa-4x  fa-play-circle-o"></i>
-                           <br></br>
-                           <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                        </span>
+   <main>
+      <section class="thumbSection">
+         <h2 class="thumbTitle">Popular Now</h2>
+         <div class="thumbTiles swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+               <!-- Slides -->
+               <div class="swiper-slide">
+                  <a class="thumbTile" href="#">
+                     <img class="thumbTile__image"
+                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
+                        alt="The Queen's Gambit">
                   </a>
-               </li>
-            </ul>
-         </div>
+               </div>
+               <div class="swiper-slide">
+                  <a class="thumbTile" href="#">
+                     <img class="thumbTile__image"
+                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABSEl8LWx4tMJIM9Atm3F1Y49Uq6X01tnDe8gPA6d84-gQ767saz9z7Jxj9sFozuI8bcM2vlxeP9IPq3Aa7jxLlkMu8JGjizRLblNEcmD7g-Z2NeZvkvV5nWF9DmJ.jpg?r=393"
+                        alt="Dark">
+                  </a>
+               </div>
+               <div class="swiper-slide">
+                  <a class="thumbTile" href="#">
+                     <img class="thumbTile__image"
+                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABRItzLGWEqRojd0SS5lkLN56bRwYGctgeybCwPWq-zs_UwEXKX_4CsXsMlWupAdBB5D7KDN-8RzuCvqzTf5Bvo_HQmI.webp?r=3ad"
+                        alt="Suits">
+                  </a>
+               </div>
+               <div class="swiper-slide">
+                  <a class="thumbTile" href="#">
+                     <img class="thumbTile__image"
+                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUjsKDiaKwLmrV662pwmVKEtRmbJI-s8M9ojCqr2QEdnPUJPX86RP-n9IGXxGcaHWkTf-cwz5e4kBLN3jYLM7HuBfYA.webp?r=01d"
+                        alt="Breaking Bad">
+                  </a>
+               </div>
+               <div class="swiper-slide">
+                  <a class="thumbTile" href="#">
+                     <img class="thumbTile__image"
+                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdPrypf33QcVWc0DHxX7rDoTSbX7EgHSJd_VDlwIr81A40ua4l2F_esQS1u4zB9SkN5TAGO1Bw0SmoEqTICKfx9vbRu-qdKh9KGWuRLasXOrCIUpEYnMffVoebRS.jpg?r=d3b"
+                        alt="The Crown">
+                  </a>
+               </div>
+            </div>
 
-      </section>
-
-      <section id="row2">
-         <h1 class="sectionTitle">Derzeit beliebt</h1>
-         <div class="examples">
-         <ul class="img-list" data-bind="foreach: popularMovies">
-            <li class="image">
-               <a href="#">
-                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                     <span data-bind="text: title" class="text-content"></span> 
-                     <span class="text-content"> 
-                        <br></br>
-                        <i class="fa fa-4x  fa-play-circle-o"></i>
-                        <br></br>
-                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                     </span>
-             
-               </a>
-            </li>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
          </div>
       </section>
-      <h1 class="sectionTitle">Nochmal ansehen</h1>
-      <div class="examples">
-         <ul class="img-list" data-bind="foreach: rewatchMovies">
-            <li class="image">
-               <a href="#">
-                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                     <span data-bind="text: title" class="text-content"></span> 
-                     <span class="text-content"> 
-                        <br></br>
-                        <i class="fa fa-4x  fa-play-circle-o"></i>
-                        <br></br>
-                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                     </span>
-             
-               </a>
-            </li>
-         
-         </ul>
-      </div>
-   </div>
+   </main>
+
+   <script>
+      var mySwiper = new Swiper('.swiper-container', {
+         // Optional parameters
+         spaceBetween: 5,
+         slidesPerView: 2,
+         loop: true,
+         freeMode: true,
+         loopAdditionalSlides: 5,
+         speed: 500,
+         // Navigation arrows
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+         breakpoints: {
+            // when window width is >= 640px
+            640: {
+               slidesPerView: 5,
+               slidesPerGroup: 5,
+               freeMode: false
+            }
+         }
+      })
+   </script>
 </body>
 
 </html>
