@@ -6,8 +6,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Netflix</title>
    <link rel="stylesheet" href="../css/style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
+      integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script src="../js/viewModel.js" type="module"></script>
 </head>
 
 <body>
@@ -21,13 +25,15 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                <!-- Slides -->
-               <div class="swiper-slide">
-                  <a class="thumbTile" href="#">
-                     <img class="thumbTile__image"
-                        src="https://occ-0-1433-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABUqwomVyMFsby9zeXLLnkfv744mKCzQDWL7rUDhbwg89bpT-V7qYoW-NNfjFaG3nFcDWu-U49vpUFB_L4njc2GFl6l60Efb4oT-_0e3oi3Dh8nwyLZhG2ciBHGUnRMB_J-D2jQk2Qz_WM4n8A_8b8ZqFDpj80B6KJ9T2bXR7rYcl0M8MaDCsR68.jpg?r=93f"
-                        alt="The Queen's Gambit">
-                  </a>
+               <div class="swiper-slide" data-bind="foreach: newMovies">
+                  <div class="img-list">
+                     <a class="thumbTile" href="#">
+                        <img class="thumbTile__image" width="280" height="150" data-bind="attr:{src: imgPath}"
+                           alt="Dark" />
+                     </a>
+                  </div>
                </div>
+
                <div class="swiper-slide">
                   <a class="thumbTile" href="#">
                      <img class="thumbTile__image"
