@@ -6,12 +6,13 @@ function AppViewModel() {
     self.movieList = ko.observable();
     self.newMovieTitle = ko.observable();
     self.newMovieRegisseur = ko.observable();
-    self.newMovieImgPath = ko.observable("");
+    self.newMovieImgPath = ko.observable();
     self.newMovieYear = ko.observable();
     self.newMovieActors = ko.observable();
     self.newMovieDecription = ko.observable();
 
     self.adminMode = ko.observable(false);
+    self.deleteMovieWithID = ko.observable(0);
 
     self.availableMovieLists = [
         { listName: "New Movies", id: 0 },
@@ -49,10 +50,28 @@ function AppViewModel() {
         }
     }
 
+
+
     self.removeMovie = function () {
+        self.newMovies().forEach(function (v, i) {
+            if (v.id == self.deleteMovieWithID()) {
+                self.newMovies.remove(v);
+            }
+
+        });
+        self.popularMovies().forEach(function (v, i) {
+            if (v.id == self.deleteMovieWithID()) {
+                self.popularMovies.remove(v);
+            }
+
+        });
+        self.rewatchMovies().forEach(function (v, i) {
+            if (v.id == self.deleteMovieWithID()) {
+                self.rewatchMovies.remove(v);
+            }
+        });
 
     }
-
     self.openMenu = function () {
         self.adminMode(!self.adminMode());
     }
@@ -101,11 +120,10 @@ function AppViewModel() {
 
 }
 
-// Activates knockout.js
-ko.applyBindings(new AppViewModel());
-
+var movieCount = 0;
 function ListEntry(title, regisseur, imgPath, publishingYear, actors, description) {
     var self = this;
+    self.id = movieCount++;
     self.title = title;
     self.regisseur = regisseur;
     self.imgPath = imgPath;
@@ -113,4 +131,9 @@ function ListEntry(title, regisseur, imgPath, publishingYear, actors, descriptio
     self.actors = actors;
     self.description = description;
 }
+
+
+// Activates knockout.js
+ko.applyBindings(new AppViewModel());
+
 

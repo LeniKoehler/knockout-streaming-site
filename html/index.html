@@ -57,6 +57,14 @@
                   <button type="submit">Add</button>
                </form>
             </div>
+            <div id="otherDiv">
+               <p>Remove a movie:</p>
+               <form data-bind="submit: removeMovie">
+                  ID: <input type="number" data-bind="value: deleteMovieWithID"
+                     placeholder="Enter the movie id to delete" />
+                  <button type="submit">remove</button>
+               </form>
+            </div>
          </div>
 
 
@@ -64,18 +72,31 @@
             <h1 id="popular">Popular on HHN-flix</h1>
             <div class="box" data-bind='foreach: popularMovies'>
                <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+               <div data-bind="visible: $root.adminMode">
+                  <div>ID:</div>
+                  <i data-bind="text: id"></i>
+               </div>
             </div>
+
          </div>
 
 
          <h1 id="newMovies">New Movies</h1>
          <div class="box" data-bind='foreach: newMovies'>
             <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+            <div data-bind="visible: $root.adminMode">
+               <div>ID:</div>
+               <i data-bind="text: id"></i>
+            </div>
          </div>
 
          <h1 id="rewatch">Watch again</h1>
          <div class="box" data-bind='foreach: rewatchMovies'>
             <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+            <div data-bind="visible: $root.adminMode">
+               <div>ID:</div>
+               <i data-bind="text: id"></i>
+            </div>
          </div>
 
 
