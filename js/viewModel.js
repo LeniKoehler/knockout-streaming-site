@@ -6,7 +6,7 @@ function AppViewModel() {
     self.movieList = ko.observable();
     self.newMovieTitle = ko.observable();
     self.newMovieRegisseur = ko.observable();
-    self.newMovieImgPath = ko.observable();
+    self.newMovieImgPath = ko.observable("");
     self.newMovieYear = ko.observable();
     self.newMovieActors = ko.observable();
     self.newMovieDecription = ko.observable();
@@ -32,8 +32,9 @@ function AppViewModel() {
     self.addMovie = function () {
 
         var list = this.movieList().listName;
-        console.log(list);
-        var movie = new ListEntry({ title: this.newMovieTitle(), regisseur: this.newMovieRegisseur(), imgPath: this.newMovieImgPath(), publishingYear: this.newMovieYear(), actors: this.newMovieActors(), description: this.newMovieDecription() });
+
+        var movie = new ListEntry(this.newMovieTitle(), this.newMovieRegisseur(), this.newMovieImgPath(), this.newMovieYear(), this.newMovieActors(), this.newMovieDecription());
+        console.log(movie);
         if (list == "New Movies") {
             self.newMovies.push(movie);
         }
