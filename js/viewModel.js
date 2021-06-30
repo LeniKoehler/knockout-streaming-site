@@ -1,7 +1,13 @@
 
         function AppViewModel() {
             
-            this.openNav = function(movie) {
+            var self = this;
+
+            self.openMenu = function () {
+                document.getElementById("myDiv").style.display = "block";
+            }
+            
+            self.openNav = function(movie) {
                 document.getElementById("myTitle").textContent = movie.title;
                 document.getElementById("myDescription").textContent = movie.description;
                 document.getElementById("myYear").textContent = movie.publishingYear;
@@ -15,14 +21,13 @@
                 // document.getElementById("box1").style.display = "block";
             }
          
-             this.closeNav = function() {
+            self.closeNav = function() {
                 document.getElementById("mySidenav").style.display = "none";
                 document.getElementById("box1").style.transform = "scale(1)";
                 document.getElementById("box1").style.transition = "all 0.7s ease";
                 document.getElementById("box1").style.border = "none";
             }
 
-            var self = this;
             
             // Neue Filme Liste
             self.newMovies = ko.observableArray([

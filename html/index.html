@@ -29,44 +29,33 @@
       <nav class="sub-nav" role="navigation">
         <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-        <button data-bind="click: $parent.openNav">Account</button>
-        <a href="#"><i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i></a>
+        <button data-bind="click: openMenu">Account</button>
+        <a href="#"><i data-bind="click: openMenu" class="fa fa-chevron-down" aria-hidden="true"></i></a>
       </nav>      
     </header>
-
-   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
-      <a id="myTitle"></a>
-      <details>
-         <summary>Description</summary>
-         <p id="myDescription">
-         </p>
-      </details>
-      <details>
-         <summary>Publishing Year</summary>
-         <p id="myYear">
-         </p>
-      </details>
-      <details>
-         <summary>Regisseur</summary>
-         <p id="myRegisseur">
-         </p>
-      </details>
-      <details>
-         <summary>Actors</summary>
-         <p id="myActors">
-         </p>
-         </details>
-   </div>
-
     <!-- END OF HEADER -->
     
     <!-- MAIN CONTAINER -->
     
     <section class="main-container" >
-      <div id="myDIV" width="100%" background-color="white">
+      <div id="myDiv">
          <p>This is my DIV element.</p>
+         <div id="btn">
+            <div id='top'></div>
+            <div id='middle'></div>
+            <div id='bottom'></div>
          </div>
+         <div id="box">
+            <div id="items">
+                  <div class="item">Item 1</div>
+                  <div class="item">Item 2</div>
+                  <div class="item">Item 3</div>
+                  <div class="item">Item 4</div>
+                  <div class="item">Item 5</div>
+            </div>
+         </div>
+      </div>
+
       <div class="location" id="home">
           <h1 id="popular">Popular on HHN-flix</h1>
           <div class="box" data-bind='foreach: popularMovies'>
