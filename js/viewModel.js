@@ -21,15 +21,6 @@ function AppViewModel() {
     ];
 
 
-    // Operations
-    self.addTask = function () {
-        self.tasks.push(new Task({ title: this.newTaskText() }));
-        self.newTaskText("");
-    };
-    self.removeTask = function (task) { self.tasks.remove(task) };
-
-
-
     self.addMovie = function () {
 
         var list = this.movieList().listName;
