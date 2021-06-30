@@ -44,7 +44,8 @@
          <div id="myDiv">
             <p>Add a movie.</p>
             <form data-bind="submit: addMovie">
-               Movie List: <input data-bind="value: movieList" placeholder="Enter movie list category" />
+               Movie List: <select
+                  data-bind="options: $root.availableMovieLists, value: movieList, optionsText: 'listName'"></select>
                Title: <input data-bind="value: newMovieTitle" placeholder="Enter the movie title" />
                Regisseur: <input data-bind="value: newMovieRegisseur" placeholder="Enter the regisseur" />
                Image Path: <input data-bind="value: newMovieImgPath"
@@ -56,14 +57,14 @@
             </form>
          </div>
 
-         <section data-bind="foreach: popularMovies">
-            <div class="location" id="home">
-               <h1 id="popular">Popular on HHN-flix</h1>
-               <div class="box">
-                  <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
-               </div>
+
+         <div class="location" id="home">
+            <h1 id="popular">Popular on HHN-flix</h1>
+            <div class="box" data-bind='foreach: popularMovies'>
+               <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
             </div>
-         </section>
+         </div>
+
 
          <h1 id="newMovies">New Movies</h1>
          <div class="box" data-bind='foreach: newMovies'>

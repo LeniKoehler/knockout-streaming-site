@@ -11,6 +11,14 @@ function AppViewModel() {
     self.newMovieActors = ko.observable();
     self.newMovieDecription = ko.observable();
 
+
+    self.availableMovieLists = [
+        { listName: "New Movies", id: 0 },
+        { listName: "Watch again", id: 1 },
+        { listName: "Popular on HHN-flix", id: 2 }
+    ];
+
+
     // Operations
     self.addTask = function () {
         self.tasks.push(new Task({ title: this.newTaskText() }));
@@ -22,16 +30,17 @@ function AppViewModel() {
 
     self.addMovie = function () {
 
-        var list = this.movieList();
-
-        if (list === "New Movies") {
-            self.newMovies.push(new ListEntry({ title: this.newMovieTitle(), regisseur: this.newMovieRegisseur(), imgPath: this.newMovieImgPath(), publishingYear: this.newMovieYear(), actors: this.newMovieActors(), description: this.newMovieDecription() }));
+        var list = this.movieList().listName;
+        console.log(list);
+        var movie = new ListEntry({ title: this.newMovieTitle(), regisseur: this.newMovieRegisseur(), imgPath: this.newMovieImgPath(), publishingYear: this.newMovieYear(), actors: this.newMovieActors(), description: this.newMovieDecription() });
+        if (list == "New Movies") {
+            self.newMovies.push(movie);
         }
         else if (list === "Watch again") {
-            self.rewatchMovies.push(new ListEntry(title, regisseur, imgURL, year, actors, description));
+            self.rewatchMovies.push(movie);
         }
         else if (list === "Popular on HHN-flix") {
-            self.popularMovies.push(new ListEntry(title, regisseur, imgURL, year, actors, description));
+            self.popularMovies.push(movie);
         }
         else {
             alert("Sorry, it is not possible to add a film to this list yet!")
