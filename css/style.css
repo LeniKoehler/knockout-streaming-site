@@ -2,11 +2,12 @@
 
 :root {
   --primary: #141414;
-  --light: #F3F3F3;
-  --dark: 	#686868;
+  --light: #f3f3f3;
+  --dark: #686868;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -24,7 +25,7 @@ img {
 }
 
 h1 {
-  padding-top: 60px;  
+  padding-top: 60px;
 }
 
 .wrapper {
@@ -37,14 +38,13 @@ header {
   padding: 20px 20px 0 20px;
   position: fixed;
   top: 0;
-  display: grid;  
-  grid-gap:5px;
+  display: grid;
+  grid-gap: 5px;
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-areas: 
-   "nt mn mn sb . . . "; 
+  grid-template-areas: "nt mn mn sb . . . ";
   background-color: var(--primary);
   width: 100%;
-  margin-bottom: 0px;  
+  margin-bottom: 0px;
 }
 
 .netflixLogo {
@@ -52,19 +52,19 @@ header {
   object-fit: cover;
   width: 100px;
   max-height: 100%;
-  
+
   padding-left: 30px;
-  padding-top: 0px;  
+  padding-top: 0px;
 }
 
-.netflixLogo img {  
-  height: 35px;     
+.netflixLogo img {
+  height: 35px;
 }
 
 #logo {
-  color: #E50914;  
-  margin: 0; 
-  padding: 0; 
+  color: #e50914;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav {
@@ -75,7 +75,7 @@ header {
 .main-nav a {
   color: var(--light);
   text-decoration: none;
-  margin: 5px;  
+  margin: 5px;
 }
 
 .main-nav a:hover {
@@ -98,7 +98,7 @@ header {
 }
 
 #myDiv {
-  display: none;
+  display: block;
 }
 
 /* MAIN CONTIANER */
@@ -113,13 +113,13 @@ header {
 }
 
 .box a {
-  transition: transform .3s;  
+  transition: transform 0.3s;
 }
 
 .box a:hover {
-  transition: transform .3s;
+  transition: transform 0.3s;
   -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);  
+  -webkit-transform: scale(1.4);
   transform: scale(1.4);
 }
 
@@ -150,14 +150,13 @@ header {
   text-decoration: underline;
 }
 
-.logos a{
+.logos a {
   padding: 10px;
 }
 
 .logo {
   color: var(--dark);
 }
-
 
 /* FOOTER */
 footer {
@@ -169,15 +168,14 @@ footer {
 
 /* MEDIA QUERIES */
 
-@media(max-width: 900px) {
-
+@media (max-width: 900px) {
   header {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-    "nt nt nt  .  .  . sb . . . "
-    "mn mn mn mn mn mn  mn mn mn mn";
+    grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
   }
 
   .box {
@@ -185,18 +183,16 @@ footer {
     grid-gap: 20px;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
-
 }
 
-@media(max-width: 700px) {
-
+@media (max-width: 700px) {
   header {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-    "nt nt nt  .  .  . sb . . . "
-    "mn mn mn mn mn mn  mn mn mn mn";
+    grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
   }
 
   .box {
@@ -210,11 +206,9 @@ footer {
     grid-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
   }
-   
 }
 
-@media(max-width: 500px) {
-
+@media (max-width: 500px) {
   .wrapper {
     font-size: 15px;
   }
@@ -226,10 +220,10 @@ footer {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: 
-    "nt"    
-    "mn"
-    "sb";
+    grid-template-areas:
+      "nt"
+      "mn"
+      "sb";
     text-align: center;
   }
 
@@ -251,18 +245,17 @@ footer {
     font-size: 18px;
   }
 
- 
   .box {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(1, 1fr);
-    text-align: center;    
+    text-align: center;
   }
 
   .box a:hover {
-    transition: transform .3s;
+    transition: transform 0.3s;
     -ms-transform: scale(1);
-    -webkit-transform: scale(1);  
+    -webkit-transform: scale(1);
     transform: scale(1.2);
   }
 
@@ -280,5 +273,4 @@ footer {
     text-align: center;
     font-size: 15px;
   }
-    
 }

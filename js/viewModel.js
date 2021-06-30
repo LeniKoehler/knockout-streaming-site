@@ -11,6 +11,7 @@ function AppViewModel() {
     self.newMovieActors = ko.observable();
     self.newMovieDecription = ko.observable();
 
+    self.adminMode = ko.observable(false);
 
     self.availableMovieLists = [
         { listName: "New Movies", id: 0 },
@@ -52,8 +53,10 @@ function AppViewModel() {
     }
 
     self.openMenu = function () {
-        document.getElementById("myDiv").style.display = "block";
+        self.adminMode(!self.adminMode());
     }
+
+
 
     self.openNav = function (movie) {
         document.getElementById("myTitle").textContent = movie.title;
