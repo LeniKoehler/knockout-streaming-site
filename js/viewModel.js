@@ -2,6 +2,45 @@
         function AppViewModel() {
             
             var self = this;
+            
+             self.movieList = ko.observable();
+             self.newMovieTitle = ko.observable();
+             self.newMovieRegisseur = ko.observable();
+             self.newMovieImgPath = ko.observable();
+             self.newMovieYear = ko.observable();
+             self.newMovieActors = ko.observable();
+             self.newMovieDescription = ko.observable();
+
+            // Operations
+            self.addTask = function() {
+                self.tasks.push(new Task({ title: this.newTaskText() }));
+                self.newTaskText("");
+            };
+            self.removeTask = function(task) { self.tasks.remove(task) };
+
+
+
+            self.addMovie = function () {
+            
+                var list = this.movieList();
+
+                if (list === "New Movies") {
+                    self.newMovies.push(new ListEntry({title: this.newMovieTitle(), regisseur: this.newMovieRegisseur(), imgPath: this.newMovieImgPath(), publishingYear: this.newMovieYear(), actors: this.newMovieActors(), description: this.newMovieDescription() }));
+                }
+                else if (list === "Watch again") {
+                    self.rewatchMovies.push(new ListEntry(title, regisseur, imgURL, year, actors, description));
+                }
+                else if (list === "Popular on HHN-flix") {
+                    self.popularMovies.push(new ListEntry(title, regisseur, imgURL, year, actors, description));
+                }
+                else {
+                    alert("Sorry, it is not possible to add a film to this list yet!")
+                }
+            }
+
+            self.removeMovie = function () {
+                
+            }
 
             self.openMenu = function () {
                 document.getElementById("myDiv").style.display = "block";

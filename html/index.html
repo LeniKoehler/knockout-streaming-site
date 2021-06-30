@@ -30,8 +30,7 @@
         <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
         <button data-bind="click: openMenu">Account</button>
-        <a href="#"><i data-bind="click: openMenu" class="fa fa-chevron-down" aria-hidden="true"></i></a>
-      </nav>      
+      </nav>
     </header>
     <!-- END OF HEADER -->
     
@@ -39,21 +38,16 @@
     
     <section class="main-container" >
       <div id="myDiv">
-         <p>This is my DIV element.</p>
-         <div id="btn">
-            <div id='top'></div>
-            <div id='middle'></div>
-            <div id='bottom'></div>
-         </div>
-         <div id="box">
-            <div id="items">
-                  <div class="item">Item 1</div>
-                  <div class="item">Item 2</div>
-                  <div class="item">Item 3</div>
-                  <div class="item">Item 4</div>
-                  <div class="item">Item 5</div>
-            </div>
-         </div>
+         <p>Add a movie.</p>
+         <form data-bind="submit: addMovie">
+            Movie List: <input data-bind="value: movieList" placeholder="New Movies" />
+            Title: <input data-bind="value: newMovieTitle" placeholder="Enter the movie title" />
+            Regisseur: <input data-bind="value: newMovieRegisseur" placeholder="Enter the regisseur" />
+            Image Path: <input data-bind="value: newMovieImgPath" placeholder="Insert the path to an image for this movie." />
+            Year: <input data-bind="value: newMovieYear" placeholder="In which year was this movie published?" />
+            Description: <input data-bind="value: newMovieDecription" placeholder="Describe this movie in 1-2 sentences!" />
+            <button type="submit">Add</button>
+         </form>
       </div>
 
       <div class="location" id="home">
