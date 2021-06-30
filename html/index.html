@@ -1,114 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
-      integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="../js/viewModel.js" type="module"></script>
-   <meta charset="UTF-8" />
-   <title>Hello Knockout!</title>
-
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/style.css">
-
-
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Netflix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
+  integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../js/viewModel.js" type="module"></script>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <div class="wrapper">
 
-   <header>
-      <p>NETFLIX</p>
-   </header>
-   <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="netflixLogo">
+        <a id="logo" href="#home"><img src="/hhn logo weiß.png" alt="Logo Image"></a>
+      </div>      
+      <nav class="main-nav">                
+        <a href="#home">Home</a>
+        <a href="#popular">Popular</a>
+        <a href="#newMovies">New Movies</a>
+        <a href="#rewatch">Watch again</a>
+        <a href="#blockbuster">Blockbuster</a>     
+      </nav>
+      <nav class="sub-nav" role="navigation">
+        <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+        <button data-bind="click: $parent.openNav">Account</button>
+        <a href="#"><i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i></a>
+      </nav>      
+    </header>
 
-      <section id="row1">
-                <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
-            <a id="myTitle"></a>
-            <details>
-               <summary>Description</summary>
-               <p id="myDescription">
-               </p>
-            </details>
-            <details>
-               <summary>Publishing Year</summary>
-               <p id="myYear">
-               </p>
-            </details>
-            <details>
-               <summary>Regisseur</summary>
-               <p id="myRegisseur">
-               </p>
-            </details>
-            <details>
-               <summary>Actors</summary>
-               <p id="myActors">
-               </p>
-             </details>
-         </div>
-  
-         <h1 class="sectionTitle">Neue Filme</h1>
-         <div class="examples">
-            <ul class="img-list" data-bind="foreach: newMovies">
-               <li class="image">
-                  <a href="#">
-                     <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                        <span data-bind="text: title" class="text-content"></span> 
-                        <span class="text-content"> 
-                           <br></br>
-                           <i class="fa fa-4x  fa-play-circle-o"></i>
-                           <br></br>
-                           <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                        </span>
-                  </a>
-               </li>
-            </ul>
-         </div>
-
-      </section>
-
-      <section id="row2">
-         <h1 class="sectionTitle">Derzeit beliebt</h1>
-         <div class="examples">
-         <ul class="img-list" data-bind="foreach: popularMovies">
-            <li class="image">
-               <a href="#">
-                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                     <span data-bind="text: title" class="text-content"></span> 
-                     <span class="text-content"> 
-                        <br></br>
-                        <i class="fa fa-4x  fa-play-circle-o"></i>
-                        <br></br>
-                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                     </span>
-             
-               </a>
-            </li>
-         </div>
-      </section>
-      <h1 class="sectionTitle">Nochmal ansehen</h1>
-      <div class="examples">
-         <ul class="img-list" data-bind="foreach: rewatchMovies">
-            <li class="image">
-               <a href="#">
-                  <img width="280" height="150" data-bind="attr:{src: imgPath}" />
-                     <span data-bind="text: title" class="text-content"></span> 
-                     <span class="text-content"> 
-                        <br></br>
-                        <i class="fa fa-4x  fa-play-circle-o"></i>
-                        <br></br>
-                        <i data-bind="click: $parent.openNav" class="fa fa-chevron-down" aria-hidden="true"></i>
-                     </span>
-             
-               </a>
-            </li>
-         
-         </ul>
-      </div>
+   <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
+      <a id="myTitle"></a>
+      <details>
+         <summary>Description</summary>
+         <p id="myDescription">
+         </p>
+      </details>
+      <details>
+         <summary>Publishing Year</summary>
+         <p id="myYear">
+         </p>
+      </details>
+      <details>
+         <summary>Regisseur</summary>
+         <p id="myRegisseur">
+         </p>
+      </details>
+      <details>
+         <summary>Actors</summary>
+         <p id="myActors">
+         </p>
+         </details>
    </div>
-</body>
 
+    <!-- END OF HEADER -->
+    
+    <!-- MAIN CONTAINER -->
+    
+    <section class="main-container" >
+      <div id="myDIV" width="100%" background-color="white">
+         <p>This is my DIV element.</p>
+         </div>
+      <div class="location" id="home">
+          <h1 id="popular">Popular on HHN-flix</h1>
+          <div class="box" data-bind='foreach: popularMovies'>
+            <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+          </div>
+      </div>
+      
+
+      <h1 id="newMovies">New Movies</h1>
+      <div class="box" data-bind='foreach: newMovies'>
+            <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+      </div>
+      
+      <h1 id="rewatch">Watch again</h1>
+      <div class="box" data-bind='foreach: rewatchMovies'>
+         <a href=""><img data-bind="attr:{src: imgPath}" alt=""></a>
+      </div>
+      
+
+      <h1 id="blockbuster">Blockbuster Action & Adventure</h1>
+      <div class="box">
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m1.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m2.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m3.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m4.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m5.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m6.PNG?raw=true" alt=""></a>                
+      </div>
+
+      <h1 id="originals">Netflix Originals</h1>
+      <div class="box">
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o1.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o2.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o3.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o4.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o5.PNG?raw=true" alt=""></a>
+        <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o6.PNG?raw=true" alt=""></a>                
+      </div>
+     
+    <!-- END OF MAIN CONTAINER -->
+
+    <!-- LINKS -->
+    <section class="link">
+      <div class="logos">
+        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+      </div>
+      <div class="sub-links">
+        <ul>
+          <li><a href="#">Audio and Subtitles</a></li>
+          <li><a href="#">Audio Description</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- END OF LINKS -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy 1997-2018 Netflix, Inc.</p>
+      <p>Carlos Avila &copy 2018</p>
+    </footer>
+  </div>
+</body>
 </html>

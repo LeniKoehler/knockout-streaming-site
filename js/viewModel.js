@@ -1,6 +1,6 @@
 
         function AppViewModel() {
-
+            
             this.openNav = function(movie) {
                 document.getElementById("myTitle").textContent = movie.title;
                 document.getElementById("myDescription").textContent = movie.description;
@@ -40,8 +40,7 @@
             self.rewatchMovies = ko.observableArray([
                 new ListEntry("Titanic", "James Cameron", "https://image.stern.de/8413980/t/g1/v4/w1440/r1.7778/-/titanic.jpg", 1997, ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"], "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic."),
                 new ListEntry("The Dark Knight Rises", "Christopher Nolan", "https://i.weltbild.de/p/batman-the-dark-knight-072353034.jpg?v=3&wp=_ads-minzoom2", 2012, ["Christian Bale", "Gary Oldman", "Anne Hathaway"], "Eight years after the Joker's reign of anarchy, Batman, with the help of the enigmatic Catwoman, is forced from his exile to save Gotham City from the brutal guerrilla terrorist Bane.")
-            ]);
-            
+            ]);           
           
         }
 
