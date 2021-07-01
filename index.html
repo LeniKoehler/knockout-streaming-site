@@ -1,55 +1,55 @@
 
 <html>
-<head>
-   <meta charset="utf-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>HHN-flix</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>HHN-flix</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
       integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
       crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"
       integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-   <div class="wrapper">
-
-      <!-- HEADER -->
-      <header>
-         <div class="hhnLogo">
-            <a id="logo" href="https://www.hs-heilbronn.de/"><img src="https://lenikoehler.github.io/knockout-streaming-site/hhn_logo.png" alt="Logo Image"></a>
-         </div>
-         <nav class="main-nav">
-            <a href="#home">Home</a>
-            <a href="#popular">Popular</a>
-            <a href="#newMovies">New Movies</a>
-            <a href="#rewatch">Watch again</a>
-         </nav>
-         <nav class="sub-nav" role="navigation">
-            <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
-            <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-            <button data-bind="click: openMenu">Account</button>
-         </nav>
-      </header>
-      <!-- END OF HEADER -->
-
-      <!-- MAIN CONTAINER -->
-
-      <section class="main-container">
-
-         <div id="mySidenav" class="sidenav" data-bind="visible: $root.detailMode">
-                 <a class="movieTitle" id="myTitle"></a>
-                 <a href="javascript:void(0)" class="closebtn" data-bind="click: closeDetails">
+      <link rel="stylesheet" href="style.css">
+      
+   </head>
+   
+   <body>
+      <div class="wrapper">
+         
+         <!-- HEADER -->
+         <header>
+            <div class="hhnLogo">
+               <a id="logo" href="https://www.hs-heilbronn.de/"><img src="https://lenikoehler.github.io/knockout-streaming-site/hhn_logo.png" alt="Logo Image"></a>
+            </div>
+            <nav class="main-nav">
+               <a href="#home">Home</a>
+               <a href="#popular">Popular</a>
+               <a href="#newMovies">New Movies</a>
+               <a href="#rewatch">Watch again</a>
+            </nav>
+            <nav class="sub-nav" role="navigation">
+               <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+               <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+               <button data-bind="click: openMenu">Account</button>
+            </nav>
+         </header>
+         <!-- END OF HEADER -->
+         
+         <!-- MAIN CONTAINER -->
+      
+         <section class="main-container">
+            
+            <div id="mySidenav" class="sidenav" data-bind="visible: $root.detailMode">
+               <a class="movieTitle" id="myTitle"></a>
+               <a href="javascript:void(0)" class="closebtn" data-bind="click: closeDetails">
                   <div class="icon"><svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M 3 16 L 22 0 M 3 0 L 22 16" stroke="black" stroke-width="3"/>
-                     </svg>
-                     </div>
-                 </a>
-             
+                  </svg>
+               </div>
+            </a>
+            
             <details>
                <summary class="detailTitle">Description</summary>
                <p id="myDescription">
@@ -69,25 +69,25 @@
                <summary class="detailTitle">Actors</summary>
                <p id="myActors">
                </p>
-             </details>
+            </details>
          </div>
-
+         
          <div data-bind="visible: $root.adminMode">
             <div id="myDiv">
                <p>Add a movie:</p>
                <form data-bind="submit: addMovie">
                   Movie List: <select
-                     data-bind="options: $root.availableMovieLists, value: movieList, optionsText: 'listName'"></select>
+                  data-bind="options: $root.availableMovieLists, value: movieList, optionsText: 'listName'"></select>
                   Title: <input data-bind="value: newMovieTitle" placeholder="Enter the movie title" />
                   Regisseur: <input data-bind="value: newMovieRegisseur" placeholder="Enter the regisseur" />
                   Image Path: <input data-bind="value: newMovieImgPath"
-                     placeholder="Insert the path to an image for this movie." />
+                  placeholder="Insert the path to an image for this movie." />
                   Year: <input type="number" data-bind="value: newMovieYear"
-                     placeholder="In which year was this movie published?" />
+                  placeholder="In which year was this movie published?" />
                   Actors: <input data-bind="value: newMovieActors"
-                     placeholder="Actors in the movie" />
+                  placeholder="Actors in the movie" />
                   Description: <input data-bind="value: newMovieDecription"
-                     placeholder="Describe this movie in 1-2 sentences!" />
+                  placeholder="Describe this movie in 1-2 sentences!" />
                   <button type="submit">Add</button>
                </form>
             </div>
@@ -95,79 +95,79 @@
                <p>Remove a movie:</p>
                <form data-bind="submit: removeMovie">
                   ID: <input type="number" data-bind="value: deleteMovieWithID"
-                     placeholder="Enter the movie id to delete" />
+                  placeholder="Enter the movie id to delete" />
                   <button type="submit">remove</button>
                </form>
             </div>
          </div>
-
-
+         
+         
          <div class="location" id="home">
             <h1 id="popular">Popular on HHN-flix</h1>
             <div class="box" data-bind='foreach: popularMovies'>
-                  <div class="imgContainer" data-bind="click: $parent.openDetails">
-                     <img data-bind="attr:{src: imgPath}" alt="">
-                     <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
-                  </div>
+               <div class="imgContainer" data-bind="click: $parent.openDetails">
+                  <img data-bind="attr:{src: imgPath}" alt="">
+                  <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
+               </div>
                <div data-bind="visible: $root.adminMode">
                   <div>ID:</div>
                   <i data-bind="text: id"></i>
                </div>
             </div>
          </div>
-
-            <h1 id="popular">New Movies</h1>
-            <div class="box" data-bind='foreach: newMovies'>
-                  <div class="imgContainer" data-bind="click: $parent.openDetails">
-                     <img data-bind="attr:{src: imgPath}" alt="">
-                     <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
-                  </div>
-               <div data-bind="visible: $root.adminMode">
-                  <div>ID:</div>
-                  <i data-bind="text: id"></i>
-               </div>
+         
+         <h1 id="popular">New Movies</h1>
+         <div class="box" data-bind='foreach: newMovies'>
+            <div class="imgContainer" data-bind="click: $parent.openDetails">
+               <img data-bind="attr:{src: imgPath}" alt="">
+               <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
             </div>
+            <div data-bind="visible: $root.adminMode">
+               <div>ID:</div>
+               <i data-bind="text: id"></i>
+            </div>
+         </div>
+         
 
-
-        <h1 id="popular">Watch again</h1>
+         <h1 id="popular">Watch again</h1>
             <div class="box" data-bind='foreach: rewatchMovies'>
-                  <div class="imgContainer" data-bind="click: $parent.openDetails">
-                     <img data-bind="attr:{src: imgPath}" alt="">
-                     <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
-                  </div>
+               <div class="imgContainer" data-bind="click: $parent.openDetails">
+                  <img data-bind="attr:{src: imgPath}" alt="">
+                  <p class="centeredImageText"><strong data-bind="text: title"></strong></p>
+               </div>
                <div data-bind="visible: $root.adminMode">
                   <div>ID:</div>
                   <i data-bind="text: id"></i>
                </div>
             </div>
-
-         <!-- END OF MAIN CONTAINER -->
-
-         <!-- LINKS -->
-         <section class="link">
-            <div class="logos">
-               <a href="https://www.twitch.tv/profaheil" target="_blank"><i class="fab fa-twitch fa-2x logo"></i></a>
-            </div>
-            <div class="sub-links">
-               <ul>
-                  <li><a href="https://www.twitch.tv/profaheil" target="_blank">Help Center</a></li>
-                  <li><a href="https://www.twitch.tv/profaheil" target="_blank">Media Center</a></li>
-                  <li><a href="https://www.hs-heilbronn.de/andreas.heil" target="_blank">Jobs</a></li>
-                  <li><a href="mailto:azittel@stud.hs-heilbronn.de;mkoehle2@stud.hs-heilbronn.de" target="_blank">Contact Us</a></li>
-               </ul>
-            </div>
-         </section>
-         <!-- END OF LINKS -->
-
-         <!-- FOOTER -->
-         <footer>
-            <p>&copy 2021 HHN-flix</p>
-            <p>Magdalena Köhler & Amadeus Zittel</p>
-         </footer>
+            
+            <!-- END OF MAIN CONTAINER -->
+            
+            <!-- LINKS -->
+            <section class="link">
+               <div class="logos">
+                  <a href="https://www.twitch.tv/profaheil" target="_blank"><i class="fab fa-twitch fa-2x logo"></i></a>
+               </div>
+               <div class="sub-links">
+                  <ul>
+                     <li><a href="https://www.twitch.tv/profaheil" target="_blank">Help Center</a></li>
+                     <li><a href="https://www.twitch.tv/profaheil" target="_blank">Media Center</a></li>
+                     <li><a href="https://www.hs-heilbronn.de/andreas.heil" target="_blank">Jobs</a></li>
+                     <li><a href="mailto:azittel@stud.hs-heilbronn.de;mkoehle2@stud.hs-heilbronn.de" target="_blank">Contact Us</a></li>
+                  </ul>
+               </div>
+            </section>
+            <!-- END OF LINKS -->
+            
+            <!-- FOOTER -->
+            <footer>
+               <p>&copy 2021 HHN-flix</p>
+               <p>Magdalena Köhler & Amadeus Zittel</p>
+            </footer>
+         </div>
 
          <script type="text/javascript" src="https://lenikoehler.github.io/knockout-streaming-site/viewModel.js"></script>
-
-   </div>
-</body>
-
-</html>
+         
+      </body>
+      
+      </html>
