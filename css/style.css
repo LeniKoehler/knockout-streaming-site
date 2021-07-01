@@ -1,26 +1,22 @@
 /* CSS VARIABLES */
 
-:root {
-  --primary: #141414;
-  --light: #f3f3f3;
-  --dark: #686868;
-}
-
 html,
 body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: var(--primary);
-  color: var(--light);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #141414;
+  color: #f3f3f3;
+  font-family: Helvetica;
   box-sizing: border-box;
   line-height: 1.4;
+  overflow-x: hidden;
 }
 
 img {
   width: 100%;
+  max-width: 288px;
   height: 139px;
 }
 
@@ -42,12 +38,12 @@ header {
   grid-gap: 5px;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: "nt mn mn sb . . . ";
-  background-color: var(--primary);
+  background-color: #141414;
   width: 100%;
   margin-bottom: 0px;
 }
 
-.netflixLogo {
+.hhnLogo {
   grid-area: nt;
   object-fit: cover;
   width: 100px;
@@ -57,7 +53,7 @@ header {
   padding-top: 0px;
 }
 
-.netflixLogo img {
+.hhnLogo img {
   height: 35px;
 }
 
@@ -73,13 +69,13 @@ header {
 }
 
 .main-nav a {
-  color: var(--light);
+  color: #f3f3f3;
   text-decoration: none;
   margin: 5px;
 }
 
 .main-nav a:hover {
-  color: var(--dark);
+  color: #686868;
 }
 
 .sub-nav {
@@ -88,13 +84,13 @@ header {
 }
 
 .sub-nav a {
-  color: var(--light);
+  color: #f3f3f3;
   text-decoration: none;
   margin: 5px;
 }
 
 .sub-nav a:hover {
-  color: var(--dark);
+  color: #686868;
 }
 
 #myDiv {
@@ -102,6 +98,7 @@ header {
 }
 
 /* MAIN CONTIANER */
+
 .main-container {
   padding: 50px;
 }
@@ -118,15 +115,85 @@ header {
 
 .box a:hover {
   transition: transform 0.3s;
-  -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);
   transform: scale(1.4);
+  z-index: 100;
 }
 
 .box img {
   border-radius: 2px;
 }
 
+.imgContainer {
+  display: block;
+  position: relative;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.imgContainer:hover {
+  transition: transform 0.3s;
+  transform: scale(1.4);
+  z-index: 100;
+}
+
+.centeredImageText {
+  position: absolute;
+  top: 75%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sidenav {
+  background-color: rgba(34, 34, 34, 0.95);
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  border-radius : 15px;
+  box-shadow:5px 5px 15px rgba(0,0,0, .3);
+  padding: 10px 10px 10px;
+  z-index: 101;
+}
+
+.closebtn{
+  color: white;
+  font-size: larger;
+  margin-left: 90%;
+}
+
+.icon{
+  position:absolute;
+  top:0;
+  padding : 25px;
+  right:0;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  background-color: rgba(121, 121, 121, 0.5);
+  cursor: pointer;
+}
+
+.detailTitle {
+  font-size: larger;
+  color: cornflowerblue;
+}
+.movieTitle{
+  color: gold;
+  font-size: larger;
+}
+
+details {
+  margin-left: 2%;
+  width: 90%;
+  background-color: rgba(40, 40, 40, 1);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+#myTitle{
+  padding-left: 2%;
+}
 /* LINKS */
 .link {
   padding: 50px;
@@ -141,12 +208,12 @@ header {
 }
 
 .sub-links a {
-  color: var(--dark);
+  color: #686868;
   text-decoration: none;
 }
 
 .sub-links a:hover {
-  color: var(--dark);
+  color: #686868;
   text-decoration: underline;
 }
 
@@ -155,14 +222,14 @@ header {
 }
 
 .logo {
-  color: var(--dark);
+  color: #686868;
 }
 
 /* FOOTER */
 footer {
   padding: 20px;
   text-align: center;
-  color: var(--dark);
+  color: #686868;
   margin: 10px;
 }
 
@@ -254,8 +321,6 @@ footer {
 
   .box a:hover {
     transition: transform 0.3s;
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
     transform: scale(1.2);
   }
 

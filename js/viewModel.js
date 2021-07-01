@@ -12,6 +12,7 @@ function AppViewModel() {
     self.newMovieDecription = ko.observable();
 
     self.adminMode = ko.observable(false);
+    self.detailMode= ko.observable(false);
     self.deleteMovieWithID = ko.observable(0);
 
     self.availableMovieLists = [
@@ -44,32 +45,53 @@ function AppViewModel() {
 
 
     self.removeMovie = function () {
+        var idValid = false;
         self.newMovies().forEach(function (v, i) {
             if (v.id == self.deleteMovieWithID()) {
                 self.newMovies.remove(v);
+                idValid = true;
             }
 
         });
         self.popularMovies().forEach(function (v, i) {
             if (v.id == self.deleteMovieWithID()) {
                 self.popularMovies.remove(v);
+                 idValid = true;
             }
 
         });
         self.rewatchMovies().forEach(function (v, i) {
             if (v.id == self.deleteMovieWithID()) {
                 self.rewatchMovies.remove(v);
+                 idValid = true;
             }
         });
-
+        if(!idValid){
+            alert("There is no film with that id that can be removed!");
+        }
     }
+    
     self.openMenu = function () {
         self.adminMode(!self.adminMode());
+        self.detailMode(false);
     }
 
+    self.openDetails = function (movie) {
+        self.detailMode(true);
+        document.getElementById("myTitle").textContent = movie.title;
+        document.getElementById("myDescription").textContent = movie.description;
+        document.getElementById("myYear").textContent = movie.publishingYear;
+        document.getElementById("myRegisseur").textContent = movie.regisseur;
+        document.getElementById("myActors").textContent = movie.actors;
+    }
+
+    self.closeDetails = function (movie) {
+        self.detailMode(false);
+    }
 
 
     self.openNav = function (movie) {
+        console.log("Opened Details");
         document.getElementById("myTitle").textContent = movie.title;
         document.getElementById("myDescription").textContent = movie.description;
         document.getElementById("myYear").textContent = movie.publishingYear;
