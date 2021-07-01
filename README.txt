@@ -1,5 +1,7 @@
 # Streaming Page
 
+Die Seite kann alternativ auch hier betrachtet werden: https://lenikoehler.github.io/knockout-streaming-site/index.html
+
 ## Datensatz hinzufügen ##
 Zum Hinzufügen eines Datensatzes zu einer Liste gibt es zwei Möglichkeiten:
 
