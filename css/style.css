@@ -196,6 +196,7 @@ details {
 }
 /* LINKS */
 .link {
+  text-align: center;
   padding: 50px;
 }
 
@@ -204,7 +205,8 @@ details {
   padding: 0;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  text-align: center;
 }
 
 .sub-links a {
@@ -227,7 +229,7 @@ details {
 
 /* FOOTER */
 footer {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   color: #686868;
   margin: 10px;
