@@ -35,3 +35,6 @@ Um einen Datensatz zu löschen gibt es ebenfalls zwei Möglichkeiten:
 
 - im Code: einfach die Zeile Code in der jeweiligen Liste löschen.
 
+## Zusatzinfo ##
+Die viewModel.js wird momentan aus github gezogen, wir haben allerdings die Datei zur Beurteilung in der 
+Filestruktur gelassen, damit Sie diese begutachten können.
